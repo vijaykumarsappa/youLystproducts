@@ -17,9 +17,9 @@ const LoadingSkeleton = ({ width, height, viewBox, radius = 5 }) => (
   </ContentLoader>
 );
 
-const ProductListing = ({ filters }) => {
+const ProductListing = ({ filters, currentPage, setCurrentPage }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(0);
+
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [isDetailLoading, setIsDetailLoading] = useState(false);
 

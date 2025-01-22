@@ -5,9 +5,11 @@ import ProductListing from "./components/ProductListing";
 
 const App = () => {
   const [filters, setFilters] = useState({});
+  const [currentPage, setCurrentPage] = useState(0);
 
   const handleFilterChange = (newFilters) => {
     setFilters(newFilters);
+    setCurrentPage(0);
   };
 
   return (
@@ -22,7 +24,11 @@ const App = () => {
 
         {/* For Right side product listing */}
         <div className="w-full lg:w-3/4 p-4">
-          <ProductListing filters={filters} />
+          <ProductListing
+            filters={filters}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+          />
         </div>
       </div>
     </div>
